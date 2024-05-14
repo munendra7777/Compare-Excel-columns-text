@@ -1,2 +1,2 @@
 # Compare-Excel-columns-text
-Compare text between two column in a excel
+Compare text between two columns in an excel.
