@@ -4,7 +4,12 @@ from tkinter import filedialog, ttk
 from tkinter import PhotoImage, Tk
 import threading
 import os
+import webbrowser
+
 file_paths = []
+# Function to open developer LinkedIn profile
+def open_linkedin():
+    webbrowser.open('https://www.linkedin.com/in/munendra7777/')
 
 def compare_text(text1, text2, delimiter=" | "):
     words1 = text1.split(" ")
@@ -113,5 +118,8 @@ tk.Checkbutton(root, text="Select Multiple Files (Provided input & output column
 
 process_button = tk.Button(root, text='Process File', command=lambda: threading.Thread(target=process_file).start(), state='disabled')
 process_button.grid(row=6, column=2)
+# developer info
+info_button = ttk.Button(root, text='Contact Developer', command=open_linkedin)
+info_button.grid(row=9, column=0, sticky='w')
 
 root.mainloop()
