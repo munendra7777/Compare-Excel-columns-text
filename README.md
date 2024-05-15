@@ -14,4 +14,8 @@ Tkinter App to Compare text between two columns in an Excel. There is an option 
 2. Some folders will be created like **build and dist** after running the script.
 3. cd to dist (**cd dist**)
 4. double-click to run **column_diff.exe**
+5. Share this column_diff.exe with people who need it (without having the trouble of installing Python and other dependencies).
+
+Write to me if face any issues or challenges.
+Thanks!
 
