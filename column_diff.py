@@ -1,7 +1,9 @@
 import pandas as pd
 import tkinter as tk
 from tkinter import filedialog, ttk
+from tkinter import PhotoImage, Tk
 import threading
+import os
 file_paths = []
 
 def compare_text(text1, text2, delimiter=" | "):
@@ -43,7 +45,8 @@ def select_file():
         file_label.config(text=f"Selected Files: {len(file_paths)} files")
     else:
         file_paths = [filedialog.askopenfilename()]
-        file_label.config(text=f"Selected File: {file_paths[0]}")
+        file_name = os.path.basename(file_paths[0])
+        file_label.config(text=f"Selected File: {file_name}")
     
     if file_paths and file_paths[0] != '':
         process_button.config(state='normal')
@@ -74,10 +77,12 @@ def process_file():
     status_label.config(text='Processing completed')
     process_button.config(state='disabled')
 
-root = tk.Tk()
+root = Tk()
+img = PhotoImage(file='column_diff_large.png')
+root.iconphoto(True, img)
 root.title("Compare Excel Columns")
-root.geometry('800x300')
-root.resizable(False, False)
+root.geometry('800x200')
+root.resizable(True, True)
 
 tk.Label(root, text="Enter Column 1 to compare (Eg, AC)").grid(row=0)
 tk.Label(root, text="Enter Column 2 to compared with (Eg, D)").grid(row=1)
@@ -94,11 +99,11 @@ col3_entry.grid(row=2, column=1)
 file_label = tk.Label(root, text="")
 file_label.grid(row=3, column=0, columnspan=2)
 
-progress = ttk.Progressbar(root, length=250, mode='determinate')
+progress = ttk.Progressbar(root, length=200, mode='determinate')
 progress.grid(row=6, column=1)
 
 status_label = tk.Label(root, text="")
-status_label.grid(row=5, column=0, columnspan=2)
+status_label.grid(row=5, column=0, columnspan=1)
 
 select_button = tk.Button(root, text='Select File', command=select_file)
 select_button.grid(row=6, column=0)
@@ -107,6 +112,6 @@ multi_file_var = tk.BooleanVar()
 tk.Checkbutton(root, text="Select Multiple Files (Provided input & output columns are same and Files are in the same directory)", variable=multi_file_var).grid(row=7, column=0, columnspan=2)
 
 process_button = tk.Button(root, text='Process File', command=lambda: threading.Thread(target=process_file).start(), state='disabled')
-process_button.grid(row=6, column=6)
+process_button.grid(row=6, column=2)
 
 root.mainloop()
