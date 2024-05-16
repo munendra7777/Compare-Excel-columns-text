@@ -83,7 +83,7 @@ def process_file():
     process_button.config(state='disabled')
 
 root = Tk()
-img = PhotoImage(file='column_diff_large.png')
+img = PhotoImage(file='/Users/munendrakumar/GIT_PROJECTS/Compare-Excel-columns-text/column_diff_large.png')
 root.iconphoto(True, img)
 root.title("Compare Excel Columns")
 root.geometry('800x200')
