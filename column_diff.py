@@ -4,6 +4,7 @@ from tkinter import filedialog, ttk
 from tkinter import PhotoImage, Tk
 import threading
 import os
+import sys
 import webbrowser
 
 file_paths = []
@@ -82,16 +83,25 @@ def process_file():
     status_label.config(text='Processing completed')
     process_button.config(state='disabled')
 
+# Get the base path of the script
+if getattr(sys, 'frozen', False):
+    base_path = sys._MEIPASS  # Path to the bundled resources
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the image
+image_path = os.path.join(base_path, "column_diff_large.png")
+print(image_path)
 root = Tk()
-img = PhotoImage(file='column_diff_large.png')
+img = PhotoImage(file=image_path)
 root.iconphoto(True, img)
 root.title("Compare Excel Columns")
-root.geometry('800x200')
+root.geometry('800x210')
 root.resizable(True, True)
 
-tk.Label(root, text="Enter Column 1 to compare (Eg, AC)").grid(row=0)
-tk.Label(root, text="Enter Column 2 to compared with (Eg, D)").grid(row=1)
-tk.Label(root, text="Enter the Output Column for the Compared Text (Eg, AD)").grid(row=2)
+tk.Label(root, text="Enter Column 1 to compare (Eg, A)").grid(row=0)
+tk.Label(root, text="Enter Column 2 to compared with (Eg, B)").grid(row=1)
+tk.Label(root, text="Enter the Output Column for the Compared Text (Eg, C)").grid(row=2)
 
 col1_entry = tk.Entry(root)
 col2_entry = tk.Entry(root)

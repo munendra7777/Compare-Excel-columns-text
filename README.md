@@ -9,12 +9,12 @@ Tkinter App to Compare text between two columns in an Excel. There is an option 
 5. Install dependencies from **requirements.txt** (**pip install -r requirements.txt**)
 6. run **python column_diff.py** (to work locally on your machine)
 
-## Create a standalone Windows App (can be shared with others without any dependencies)
-1. run **python convert_to_exe.py** to create a standalone Windows app.
+## Create a standalone Windows/Linux/Mac App (can be shared with others without any dependencies)
+1. run **python convert_to_app.py** to create a standalone Windows app.
 2. Some folders will be created like **build and dist** after running the script.
 3. cd to dist (**cd dist**)
-4. double-click to run **column_diff.exe**
-5. Share this column_diff.exe with people who need it (without having the trouble of installing Python and other dependencies).
+4. double-click to run **column_diff** app
+5. Share this **column_diff** app with people who need it (without having the trouble of installing Python and other dependencies).
 
 Write to me if face any issues or challenges.
 Thanks!
