@@ -1,6 +1,9 @@
 # Compare-Excel-columns-text
 Tkinter App to Compare text between two columns in an Excel. There is an option to select multiple files as well, provided the input columns and output columns don't change.
 
+## Supported file formats
+xlsx, csv, tsv and number (macos filetype)
+
 ## Steps to follow
 1. Download the repository using **git clone https://github.com/munendra7777/Compare-Excel-columns-text.git**
 2. cd to Compare-Excel-columns-text (**cd Compare-Excel-columns-text**)
