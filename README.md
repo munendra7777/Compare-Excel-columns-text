@@ -20,8 +20,9 @@ xlsx, csv, tsv and number (macos filetype)
 5. Share this **column_diff** app with people who need it (without having the trouble of installing Python and other dependencies).
 
 ## Watch it in action
+[![Watch the Video](column_diff_large.png)](https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7198179641667309568)
 
-```<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7198179641667309568" height="1159" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+(Click Icon To Watch It In Action)
 
 Write to me if face any issues or challenges.
 Thanks!
